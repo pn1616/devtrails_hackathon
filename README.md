@@ -91,12 +91,6 @@ If the UPI mandate fails, coverage pauses rather than cancels for 48 hours with 
 | Shift activity | Inferred | Verified order history feeds directly into fraud signals |
 | UPI details | Worker-entered | Already on file with the platform |
 
-### Mock Integration for Phase 1
-
-Zepto, Blinkit, and Swiggy do not expose public APIs. For Phase 1, GigShield includes a mock platform API that returns realistic worker data in the exact format a live integration would use. The authentication flow, data schema, and autopay logic are production-identical. Only the data source is synthetic.
-
-The mock API is documented separately in `/mock-api/README.md`.
-
 ---
 
 ## Parametric Triggers
