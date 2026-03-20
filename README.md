@@ -356,42 +356,6 @@ Parametric insurance has near-zero claim administration cost because 94%+ of cla
 
 ---
 
-## Getting Started
-
-```bash
-# Clone the repository
-git clone https://github.com/your-org/gigshield.git
-cd gigshield
-
-# Install frontend dependencies
-cd frontend && npm install
-
-# Install backend dependencies
-cd ../backend && npm install
-
-# Install ML service dependencies
-cd ../ml && pip install -r requirements.txt
-
-# Start development servers
-npm run dev
-```
-
-Environment variables required (see `.env.example`):
-
-```
-OPENWEATHER_API_KEY=
-AQICN_API_KEY=
-NEWS_API_KEY=
-GOOGLE_MAPS_API_KEY=
-RAZORPAY_KEY_ID=
-RAZORPAY_KEY_SECRET=
-DATABASE_URL=
-REDIS_URL=
-FIREBASE_PROJECT_ID=
-```
-
----
-
 ## Coverage Scope — Golden Rules
 
 | Rule | Commitment |
