@@ -1,19 +1,18 @@
-# GigShield
+#  GigShield
 ### AI-Powered Parametric Income Protection for Gig Workers
 
-> **Guidewire DEVTrails 2026 — Hackathon Submission**
-- Persona: Q-Commerce Delivery Partners (Zepto · Blinkit · Swiggy Instamart)
-- Platform: Web and Mobile Application | Coverage: Income Loss ONLY | Pricing: Weekly
-
-Gig workers don't need charity. They need predictable income protection. GigShield delivers that automatically, instantly, and fairly.
+- **Persona:** Q-Commerce Delivery Partners (Zepto, Blinkit, Swiggy Instamart)
+- **Platform:** Progressive Web App (PWA) — React.js + Node.js
+- **Coverage:** Income Loss ONLY (no health, vehicle repair, or accident cover)
+- **Pricing:** Weekly subscription model — aligned to gig worker pay cycle
 
 ---
 
 ## The Problem
 
-India has **15+ million platform-based gig delivery workers**. External disruptions such as extreme weather, platform outages, curfews that cause 20–30% income loss monthly. Zero income protection exists. When disruptions hit, workers bear 100% of the financial loss with no safety net.
+India has **15+ million platform-based gig delivery workers**. External disruptions — extreme weather, platform outages, curfews, AQI emergencies — cause 20–30% income loss monthly. Zero income protection exists. When disruptions hit, workers bear 100% of the financial loss with no safety net.
 
-**Meet Raju**: a 27-year-old delivery partner for Zepto in Pune. He earns ₹700–₹900/day completing 25–35 quick-commerce deliveries. He has no formal employment, no PF, no ESI. On a single day of extreme rainfall, he loses ₹560. Over a monsoon season, he loses ₹4,200–₹6,800, with no savings buffer and informal loans at 3–5% monthly interest.
+**Meet Raju** — a 27-year-old delivery partner for Zepto in Pune. He earns ₹700–₹900/day completing 25–35 quick-commerce deliveries. He has no formal employment, no PF, no ESI. On a single day of extreme rainfall, he loses ₹560. Over a monsoon season, he loses ₹4,200–₹6,800, with no savings buffer and informal loans at 3–5% monthly interest.
 
 GigShield ensures he gets paid when he can't work.
 
@@ -21,7 +20,7 @@ GigShield ensures he gets paid when he can't work.
 
 ## The Solution
 
-GigShield is an **AI-enabled parametric income insurance platform** that automatically detects external disruptions using real-time data feeds and instantly pays lost wages to gig workers,  no claim forms, no waiting, no paperwork.
+GigShield is an **AI-enabled parametric income insurance platform** that automatically detects external disruptions using real-time data feeds and instantly pays lost wages to gig workers — no claim forms, no waiting, no paperwork.
 
 GigShield automatically:
 - Detects disruptions using real-time data
@@ -39,7 +38,7 @@ Workers subscribe weekly and are covered the moment they log in to work.
 | Payout speed | < 3 minutes | 3–7 business days |
 | Fraud detection | Multi-signal 7-dimension ML + ring detection | Basic GPS coordinate check |
 | Coverage model | Earnings-linked dynamic (40% of last week) | Fixed sum insured |
-| Platform outage coverage | Yes  | No |
+| Platform outage coverage | Yes (unique) | No |
 | Pricing structure | Weekly + AI-personalized per worker | Monthly/annual, fixed rate |
 | Syndicate defense | Coordinated ring detection model | Not addressed |
 
@@ -49,7 +48,7 @@ Workers subscribe weekly and are covered the moment they log in to work.
 
 ### How Onboarding Actually Works
 
-GigShield integrates directly with the delivery platform's existing worker database. Workers authenticate using the same credentials they already use for Zepto, Blinkit, or Swiggy Instamart that have no separate registration, no manual data entry.
+GigShield integrates directly with the delivery platform's existing worker database. Workers authenticate using the same credentials they already use for Zepto, Blinkit, or Swiggy Instamart — no separate registration, no manual data entry.
 
 ```
 Worker taps "Connect with Zepto"
@@ -78,16 +77,16 @@ Total onboarding time: under 2 minutes. No forms. No manual entry.
 
 Every Sunday night an automated batch job runs across all active policies:
 
-1. Pulls last week's verified earnings directly from the platform database
-2. Recalculates dynamic coverage amount (`40% x last week's earnings`, capped at plan maximum)
-3. Recalculates adjusted premium using the 5 AI risk multipliers
-4. Charges the worker's UPI via the standing autopay mandate
-5. Updates the policy for the coming week
-6. Sends one confirmation SMS
+1. Pulls last week's **verified earnings** from platform API
+2. Recalculates **dynamic coverage** (40% of verified earnings, capped at plan maximum)
+3. Recalculates **adjusted premium** (zone + rating + season multipliers)
+4. Charges worker's UPI via **Razorpay standing mandate**
+5. Updates policy for the coming week
+6. Sends **one SMS**: "You're covered this week. ₹X coverage active."
 
 The worker wakes up Monday morning already covered. They did nothing.
 
-**If the UPI mandate fails:** coverage pauses, and does not cancel, for 48 hours with a single retry notification. If payment clears within 48 hours, coverage resumes with no gap and no re-enrollment required.
+**If the UPI mandate fails:** coverage pauses — not cancels — for 48 hours with a single retry notification. If payment clears within 48 hours, coverage resumes with no gap and no re-enrollment required.
 
 ### What Platform Integration Unlocks
 
@@ -101,7 +100,9 @@ The worker wakes up Monday morning already covered. They did nothing.
 
 ### Mock Integration (Phase 1)
 
-Zepto, Blinkit, and Swiggy do not expose public APIs. For Phase 1, GigShield includes a mock platform API that returns realistic worker data in the exact format a live integration would use. The authentication flow, data schema, and autopay logic are production-identical that only the data source is synthetic.
+Zepto, Blinkit, and Swiggy do not expose public APIs. For Phase 1, GigShield includes a mock platform API that returns realistic worker data in the exact format a live integration would use. The authentication flow, data schema, and autopay logic are production-identical — only the data source is synthetic.
+
+The mock API is documented separately in `/mock-api/README.md`.
 
 ---
 
@@ -113,67 +114,82 @@ GigShield uses a 5-trigger stack. Triggers are fully data-driven and automatic �
 |---|---|---|---|---|
 | 1 | Extreme Rainfall | >50mm/hr in worker's pin-code zone | OpenWeatherMap API + IMD backup | 100% of daily rate |
 | 2 | Extreme Heat Index | Temperature >42°C combined with humidity | OpenWeatherMap API | 70% of daily rate |
-| 3 | Civil Disruption | Curfew/strike keyword detection in worker's zone | NewsAPI + mock civic data feed | 100% of daily rate |
-| 4 | Platform Outage | Zepto/Blinkit delivery app downtime >45 minutes | Mock platform uptime API | 80% of daily rate |
+| 3 | Severe Air Quality | AQI >300 (Severe+ category) | AQICN Free API | 60% of daily rate |
+| 4 | Civil Disruption | Curfew/strike keyword detection in worker's zone | NewsAPI + mock civic data feed | 100% of daily rate |
+| 5 | Platform Outage | Zepto/Blinkit delivery app downtime >45 minutes | Mock platform uptime API | 80% of daily rate |
 
-Each trigger uses a **3-layer verification** system (primary API → secondary source cross-validation → platform delivery pause echo). Multiple simultaneous triggers apply the **single highest payout rate** .
+Each trigger uses a **3-layer verification** system (primary API → secondary source cross-validation → platform delivery pause echo). Multiple simultaneous triggers apply the **single highest payout rate** — no double-dipping.
 
 ---
 
-## Weekly Premium & Coverage Plans (an example)
+## Weekly Premium & Coverage Plans
 
 | Plan | Weekly Premium | Daily Coverage | Max Weekly Payout | Eligibility |
-|---|---|---|---|---|
-| Basic Shield | ₹29/week | ₹250/disruption day | ₹1,000 | New workers (0–6 months) |
-| Pro Shield | ₹59/week | ₹450/disruption day | ₹2,000 | Active workers (6m+, rating 3.5+) |
-| Elite Shield | ₹99/week | ₹750/disruption day | ₹3,500 | Top workers (1yr+, rating 4.5+) |
+|------|---------------|----------------|-------------------|-------------|
+| Basic Shield | ₹29/week | ₹250/day | ₹1,000 | New workers (0–6 months) |
+| Pro Shield | ₹59/week | ₹450/day | ₹2,000 | Active workers (6m+, 3.5★+) |
+| Elite Shield | ₹99/week | ₹750/day | ₹3,500 | Top workers (1yr+, 4.5★+) |
 
+### Earnings-Linked Dynamic Coverage
 
-### AI-Driven Premium Calculation
+Instead of a fixed sum insured, coverage scales to what the worker **actually earned last week**:
 
-Premiums are recalculated every Monday using 5 risk multipliers:
-- **Zone Risk Score** — historical disruption frequency (0.8x–1.4x)
-- **Worker Tenure** — up to 15% discount at 12 months
-- **Platform Rating** — 4.5+ stars earns 10% discount
-- **Seasonal Risk Index** — monsoon +15%, winter -10%
-- **Claim History Loyalty** — 6 consecutive clean months earns up to 20% discount
+```
+Weekly Coverage = Min(Plan Maximum, 40% x Last Week's Verified Platform Earnings)
+```
+
+### AI-Based Premium Calculation
+
+Premium is recalculated every Monday using 5 risk multipliers applied to the base plan price:
+
+| Factor | Effect |
+|--------|--------|
+| Zone risk score | High flood-risk zones pay more (0.8×–1.4×) |
+| Platform rating | 4.5★+ workers get 10% discount |
+| Tenure | 12 months+ active = up to 15% discount |
+| Seasonal risk | Monsoon season (Jun–Sep) = +15% |
+| Claim history | 6 clean months = up to 20% loyalty discount |
+
+**Raju's live example:** ₹59 base × 1.2 (zone) × 0.90 (rating) × 0.92 (tenure) × 1.15 (monsoon) = **₹65/week**
 
 ---
 
-## Workflow
+## Zero-Touch Payout Flow
 
-1. Worker connects platform account via OAuth — profile auto-populated from employer database
-2. Selects weekly plan and confirms UPI autopay mandate once
-3. System monitors real-time conditions across all active worker zones every 5 minutes
-4. Trigger threshold crossed — cross-verified across multiple independent data sources
-5. Fraud score calculated using 7-dimension behavioral signals
-6. Payout sent instantly to worker's UPI — under 3 minutes end to end
+| Stage | What Happens | Time |
+|-------|-------------|------|
+| Trigger detection | API crosses threshold in worker's zone | T + 0 sec |
+| Cross-verification | Secondary source + platform echo confirms | T + 30 sec |
+| Policy + activity check | Worker has active policy + was working recently (from platform data) | T + 45 sec |
+| ML fraud score | 7-dimension behavioral scoring (0.0–1.0) | T + 60 sec |
+| Auto-approve | Score <0.30 → payout initiated | T + 90 sec |
+| UPI payout sent | Razorpay mock → worker's registered UPI | T + 2–3 min |
+| Notification | SMS + push: "Disruption detected. ₹X credited." | T + 3 min |
+
+**Target: Sub-3-minute payout. No forms. No waiting. No calls.**
 
 ---
 
 ## AI/ML Integration
 
 ### Model 1 — Dynamic Premium Calculator
-**Type:** Gradient Boosted Regression (XGBoost)
-
-Inputs: zone disruption history, worker tenure, platform rating, last 4-week earnings, seasonal risk index, claim history, shift hours.
+- **Type:** Gradient Boosted Regression (XGBoost)
+- **Inputs:** Verified zone disruption history, worker tenure, live platform rating, last 4-week verified earnings, seasonal index, claim history, shift hours
+- **Output:** Personalized weekly premium — recalculated every Monday
+- **Phase 1 status:** Mock output with synthetic data; live platform data in Phase 2
 
 ### Model 2 — Fraud Detection Engine
-**Type:** Ensemble — Isolation Forest + Gradient Boosted Classifier
-
-7-dimension signal scoring across:
-- GPS coordinates + motion sensor data
-- Network type signals (WiFi vs 4G)
-- Platform activity logs
-- Claim timing patterns
-- Cohort and ring signals
-- Device fingerprint
-- Historical claim behavior
+- **Type:** Ensemble — Isolation Forest + Gradient Boosted Classifier
+- **Inputs:** GPS stability, accelerometer variance, network type (WiFi/4G), time-since-last-order (from platform), claim filing velocity, cohort spike score, device fingerprint hash
+- **Output:** Fraud probability score 0.0–1.0 → routed to Green / Amber / Red
+- **Phase 1 status:** Rule-based mock; full ML training on platform data in Phase 2
 
 ### Model 3 — Churn & Retention Predictor
 **Type:** Logistic Regression / Random Forest Classifier
 
 Identifies workers likely to lapse and triggers proactive retention — loyalty discount reminders, upcoming disruption forecasts, renewal nudges.
+
+> **Phase 1 scope:** Mock ML output with synthetic data. Real model training begins in Phase 2.
 
 ---
 
@@ -183,7 +199,7 @@ A coordinated syndicate of 500+ delivery workers has been documented exploiting 
 
 ### The Core Insight
 
-> A genuine delivery worker caught in a storm was **actively working** moments before the disruption. A fraudster was **never working**. We don't just check WHERE the worker is, we check WHAT they were doing.
+> A genuine delivery worker caught in a storm was **actively working** moments before the disruption. A fraudster was **never working**. We don't just check WHERE the worker is — we check WHAT they were doing.
 
 ### Fraud Scenarios Covered
 
@@ -217,48 +233,55 @@ A coordinated syndicate of 500+ delivery workers has been documented exploiting 
 | Amber Zone | 0.31–0.69 | Soft flag, background check; first-time Amber auto-approved | 2–4 hours |
 | Red Zone | 0.70–1.00 | Hold for human review; one-tap appeal option | 24–48 hours |
 
-**UX philosophy:** The word "fraud" never appears in any worker-facing message. First suspicious claim is still approved. Appeal is a single tap. Worker dignity is non-negotiable.
+- Word **"fraud"** is NEVER shown to the worker
+- First-time Amber flag = **auto-approved always**
+- Single flag = no permanent penalty — resets after 90 clean days
+- Appeal = one tap, optional location photo, no complex forms
 
 ---
 
 ## Dashboards
 
-### Worker Dashboard (Mobile)
+### Worker Dashboard
+| Section | What It Shows |
+|---------|--------------|
+| Coverage Status | Active/inactive badge, plan name, weekly coverage amount, renewal date |
+| This Week's Earnings | Daily earnings bar chart pulled from platform, week-to-date total |
+| Disruption Alerts | Live zone map, active trigger type, severity, estimated duration |
+| Payout History | Date, trigger, amount, processing time for every payout received |
+| Claim Status Tracker | Green/Amber/Red live status of any in-progress claim |
+| Loyalty Milestone | Progress bar toward 6-month clean claim loyalty discount |
 
-Designed to be glanceable in under 5 seconds between deliveries.
-
-- Coverage status — active/inactive, plan name, expiry, weekly premium
-- Earnings protected — this week vs last week
-- Disruption alerts — live zone map with active trigger type and severity
-- Payout history — every payout with date, trigger, amount, and processing time
-- Claim status tracker — Green/Amber/Red with timeline, no accusatory language
-- Risk score indicator — personal score with contributing factors
-- Loyalty milestone — progress toward 6-month clean-claim discount
-- Zone safety map — pin-code level disruption heat map for route planning
-
-### Admin Dashboard (Web)
-
-The insurer's real-time command center.
-
-- Live operations overview — active policies, claims in last 24h, payouts today
-- Loss ratio analytics — by week, trigger type, city zone, and plan tier
-- Claim volume heatmap — geographic pin-code level density, filterable by trigger
-- Fraud intelligence queue — Red Zone claims awaiting review, ring detection alerts
-- Ring detection alerts — suspected coordinated fraud clusters with member list and evidence
-- Predictive analytics — 7-day weather forecast + projected claim volume + projected payout liability
-- Cohort performance — retention rate, churn risk workers, loyalty redemption rate
-- Premium vs payout waterfall — weekly P&L visibility
-- Regulatory compliance log — full audit trail with timestamps
+### Admin / Insurer Dashboard
+| Section | What It Shows |
+|---------|--------------|
+| Live Operations | Active policies, claims today, payouts today, workers in disruption zones right now |
+| Loss Ratio Analytics | Loss ratio by week, trigger type, city zone, plan tier |
+| Fraud Intelligence Queue | Red zone claims awaiting review, fraud score breakdown, ring detection alerts |
+| Predictive Analytics | 7-day weather forecast + projected claim volume + payout liability |
+| Trigger Calibration | Hit rate, false positive rate per trigger with threshold adjustment controls |
 
 ---
 
-## Technology Stack
+## Platform Choice — Why PWA
+
+We chose a **Progressive Web App (PWA)** over a native mobile app for 4 clear reasons:
+
+1. **No Play Store barrier** — Raju gets a WhatsApp link, opens it in Chrome, connected and insured in under 2 minutes. No download, no storage used on his already-full budget phone.
+2. **Judges evaluate instantly** — Any judge opens the URL in their browser. No APK, no 3–7 day Play Store approval delay risking the submission deadline.
+3. **All sensors available** — GPS (Geolocation API), motion (DeviceMotion API), WiFi vs 4G (Network Information API) — everything fraud detection needs is accessible via browser APIs.
+4. **6-week timeline** — A proper Android app takes 8–10 weeks. PWA delivers a complete, polished product within the hackathon timeline.
+
+> **Phase 3 roadmap:** Native Android app using React Native — 70% of PWA code is directly reusable.
+
+---
+
+## Tech Stack
 
 | Layer | Technology | Purpose |
-|---|---|---|
-| Frontend (Web) | React.js + TypeScript + Tailwind CSS | Worker dashboard, onboarding, admin panel |
-| Frontend (Mobile) | Flutter | Worker mobile app |
-| Backend API | Node.js + Express.js | Shared APIs for web and mobile — policy management, claims, trigger monitoring |
+|-------|-----------|---------|
+| Frontend | React.js + TypeScript + Tailwind CSS | Worker dashboard, onboarding, admin panel |
+| Backend | Node.js + Express.js | Policy management, claims processing, trigger monitoring |
 | ML Services | Python + FastAPI + XGBoost + scikit-learn | Premium calculator, fraud scorer, churn predictor |
 | Database | PostgreSQL (primary) + Redis (cache) + Firebase (mobile sync and auth) | Storage, real-time cache, mobile state |
 | Real-Time Events | Socket.io / WebSockets | Live disruption alerts, instant payout notifications |
@@ -300,38 +323,74 @@ Analytics Pipeline:
 
 ---
 
+## Development Plan
+
+| Phase | Weeks | Theme | Key Deliverables |
+|---|---|---|---|
+| Phase 1 | Mar 4–20 | Ideation & Foundation | This document. DB schema. UI wireframes. Synthetic data. Onboarding prototype. Premium calculator mock. GitHub README. |
+| Phase 2 | Mar 21–Apr 4 | Automation & Protection | Full onboarding with platform OAuth. Policy management. ML v1 premium calculator. All 5 triggers live. ML fraud detection. Claims dashboard. 2-min demo video. |
+| Phase 3 | Apr 5–17 | Scale & Optimise | Ring detection ML. Instant payout simulation. Full worker + admin dashboards. Predictive 7-day analytics. Flutter mobile app. Final pitch deck PDF. 5-min demo video. |
+
+### Phase 1 Prototype Scope (Current Submission)
+
+- [x] Landing page — GigShield branding, value proposition, Raju's story
+- [x] Worker onboarding with mock platform OAuth flow
+- [x] Interactive risk assessment — zone + profile → real-time risk score display
+- [x] Weekly premium calculator — interactive sliders → dynamic premium output
+- [x] Disruption trigger simulator — select a trigger → see automated claim and payout flow
+- [x] Worker dashboard mockup — all 8 metric sections
+- [x] Admin dashboard mockup — KPI cards, claims table, fraud queue
+
+---
+
 ## Business Viability
 
-**Target Market:**
-- ~15 million gig delivery workers in India
-- ~2.5 million Q-commerce workers (Zepto, Blinkit, Swiggy Instamart)
-- ~1.2 million addressable (urban, smartphone-enabled)
+### Market Size
+- 15M+ gig delivery workers in India
+- ~1.2M addressable Q-commerce workers (urban, smartphone-enabled)
+- Annual premium revenue at 1% penetration: ₹3.68 Crore
+- Annual premium revenue at 5% penetration: **₹18.4 Crore**
 
-**Unit Economics (Pro Shield — ₹59/week per worker):**
+### Unit Economics — Pro Shield (₹59/week per worker)
 
-| P&L Item | Amount |
-|---|---|
-| Weekly Premium Collected | ₹59.00 |
-| Expected Claim Payout | -₹28.13 |
-| Fraud Loss Provision (3% budget) | -₹1.77 |
-| Operational Cost | -₹8.00 |
-| **Net Margin per Worker/Week** | **₹21.10 (35.8%)** |
+| Item | Amount |
+|------|--------|
+| Weekly premium collected | ₹59.00 |
+| Expected claim payout | −₹28.13 |
+| Fraud loss provision (3% budget) | −₹1.77 |
+| Operational cost (tech + support) | −₹8.00 |
+| **Net margin per worker per week** | **₹21.10 (35.8%)** |
 
-At 1% market penetration (12,000 workers): **₹3.68 Crore annual premium revenue**
-At 5% market penetration (60,000 workers): **₹18.4 Crore annual premium revenue**
-
-Parametric insurance has near-zero claim administration cost because 94%+ of claims are auto-approved by ML with no human touch. The automation is the profit engine.
-
----
-
-## Coverage Scope — Golden Rules
-
-| Rule | Commitment |
-|---|---|
-| Coverage Scope | Income loss ONLY. No vehicle repair, no health insurance, no accident medical bills — ever. |
-| Pricing Model | Weekly premium structure aligned to gig worker pay cycle. No monthly or annual options. |
-| Persona Focus | Q-Commerce delivery partners (Zepto, Blinkit, Swiggy Instamart) exclusively. |
-| Trigger Type | External environmental/social disruptions only. Personal choice not to work is excluded. |
+### Catastrophe Risk Management
+- **Catastrophe reserve:** 40% of weekly profit saved → ₹3.7L reserve after 6 months
+- **Geographic spread:** Workers across 5 cities — a city-level flood affects only 20% of the portfolio, not 100%
+- **Reinsurance:** Partner insurer covers claims exceeding threshold — standard industry practice used by every insurance company
+- **Monsoon surge pricing:** +15% premium Jun–Sep builds extra reserve exactly before the high-risk season
 
 ---
 
+## Why GigShield Wins
+
+| Feature | GigShield | Competitors |
+|---------|-----------|-------------|
+| Onboarding | 3 taps via platform OAuth | Manual registration form |
+| Trigger granularity | Pin-code hyperlocal | City-wide averages |
+| Claim process | Zero-touch automatic | Manual form submission |
+| Payout speed | < 3 minutes | 3–7 business days |
+| Earnings data | Verified from platform API | Self-reported by worker |
+| Fraud detection | 7-dimension ML + ring detection + live platform data | Basic GPS check |
+| Coverage model | Earnings-linked dynamic (real-time) | Fixed sum insured |
+| Platform outage cover | Yes — Trigger 5 (unique) | No |
+| Pricing | Weekly + AI-personalized | Monthly/annual fixed |
+| Syndicate defense | Ring detection model | Not addressed |
+| KYC | Face liveness detection (one-time) | None |
+
+---
+
+## License
+
+This project was built for Guidewire DEVTrails 2026. Licensing terms to be determined post-hackathon.
+
+---
+
+*GigShield — Because when the storm hits, Raju shouldn't have to choose between safety and survival.*
