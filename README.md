@@ -14,7 +14,7 @@ Gig workers don't need charity. They need predictable income protection. GigShie
 
 ## The Problem
 
-India has over 15 million platform-based gig delivery workers. External disruptions like extreme weather, platform outages, curfews, and AQI emergencies cause 20 to 30 percent income loss every month. No income protection exists for these workers. When disruptions hit, they bear 100 percent of the financial loss with nothing to fall back on.
+India has over 15 million platform-based gig delivery workers. External disruptions like extreme weather, platform outages, curfews cause 20 to 30 percent income loss every month. No income protection exists for these workers. When disruptions hit, they bear 100 percent of the financial loss with nothing to fall back on.
 
 Meet Raju, a 27-year-old delivery partner for Zepto in Pune. He earns between 700 and 900 rupees a day completing 25 to 35 quick-commerce deliveries. He has no formal employment, no PF, no ESI. On a single day of extreme rainfall, he loses 560 rupees. Over a monsoon season, he loses between 4,200 and 6,800 rupees, with no savings buffer and informal loans charging 3 to 5 percent monthly interest.
 
@@ -107,11 +107,10 @@ GigShield uses a 5-trigger stack. Triggers are fully data-driven and automatic, 
 |---|---|---|---|---|
 | 1 | Extreme Rainfall | Over 50mm per hour in worker's pin-code zone | OpenWeatherMap API with IMD backup | 100% of daily rate |
 | 2 | Extreme Heat Index | Temperature above 42 degrees combined with humidity | OpenWeatherMap API | 70% of daily rate |
-| 3 | Severe Air Quality | AQI above 300, Severe category | AQICN Free API | 60% of daily rate |
-| 4 | Civil Disruption | Curfew or strike keyword detection in worker's zone | NewsAPI with mock civic data feed | 100% of daily rate |
-| 5 | Platform Outage | Zepto or Blinkit delivery app downtime over 45 minutes | Mock platform uptime API | 80% of daily rate |
+| 3 | Civil Disruption | Curfew or strike keyword detection in worker's zone | NewsAPI with mock civic data feed | 100% of daily rate |
+| 4 | Platform Outage | Zepto or Blinkit delivery app downtime over 45 minutes | Mock platform uptime API | 80% of daily rate |
 
-Each trigger uses a 3-layer verification system: primary API confirms the threshold, a secondary source cross-validates to eliminate false positives, and the platform delivery pause acts as a final confirmation signal. When multiple triggers fire simultaneously, only the single highest payout rate applies. No double-dipping.
+Each trigger uses a 3-layer verification system: primary API confirms the threshold, a secondary source cross-validates to eliminate false positives, and the platform delivery pause acts as a final confirmation signal. When multiple triggers fire simultaneously, only the single highest payout rate applies. 
 
 ---
 
@@ -122,14 +121,6 @@ Each trigger uses a 3-layer verification system: primary API confirms the thresh
 | Basic Shield | Rs 29 per week | Rs 250 per disruption day | Rs 1,000 | New workers, 0 to 6 months |
 | Pro Shield | Rs 59 per week | Rs 450 per disruption day | Rs 2,000 | Active workers, 6 months or more, rated 3.5 stars or above |
 | Elite Shield | Rs 99 per week | Rs 750 per disruption day | Rs 3,500 | Top workers, 1 year or more, rated 4.5 stars or above |
-
-### Earnings-Linked Dynamic Coverage
-
-Instead of a fixed sum insured, coverage scales to what the worker actually earned last week:
-
-```
-Weekly Coverage = Min(Plan Maximum, 40% of Last Week's Verified Platform Earnings)
-```
 
 ### AI-Based Premium Calculation
 
@@ -248,22 +239,6 @@ The word "fraud" is never shown to a worker. A first-time Amber flag is always a
 
 ---
 
-## Why a Progressive Web App
-
-GigShield is built as a PWA rather than a native mobile app for four clear reasons.
-
-There is no Play Store barrier. Raju gets a WhatsApp link, opens it in Chrome, and is connected and insured in under 2 minutes. No download, no storage used on his already-full budget phone.
-
-Judges can evaluate it instantly. Any judge opens the URL in their browser with no APK and no 3 to 7 day Play Store approval delay that could risk the submission deadline.
-
-All sensors are available. GPS via the Geolocation API, motion via the DeviceMotion API, and WiFi vs 4G via the Network Information API cover everything fraud detection needs and are all accessible through browser APIs.
-
-The 6-week timeline is achievable. A proper Android app takes 8 to 10 weeks. The PWA delivers a complete, polished product within the hackathon window.
-
-Phase 3 roadmap: a native Android app using React Native, where 70 percent of the PWA codebase is directly reusable.
-
----
-
 ## Technology Stack
 
 | Layer | Technology | Purpose |
@@ -283,9 +258,8 @@ Phase 3 roadmap: a native Android app using React Native, where 70 percent of th
 | API | Purpose | Triggers |
 |---|---|---|
 | OpenWeatherMap | Rainfall and heat index data | Triggers 1 and 2 |
-| AQICN | Air Quality Index by zone | Trigger 3 |
-| NewsAPI | Curfew and strike detection | Trigger 4 |
-| Mock Platform API | Zepto and Blinkit delivery pause signal | Trigger 5 |
+| NewsAPI | Curfew and strike detection | Trigger 3 |
+| Mock Platform API | Zepto and Blinkit delivery pause signal | Trigger 4 |
 | Razorpay | Premium collection and payout | Payment layer |
 | Google Maps | Pin-code zone polygon mapping | Zone risk scoring |
 
@@ -316,20 +290,6 @@ Analytics Pipeline:
 
 India has over 15 million gig delivery workers. Approximately 1.2 million Q-commerce workers in urban areas with smartphones form the addressable market. Annual premium revenue at 1 percent penetration reaches Rs 3.68 Crore. At 5 percent penetration it reaches Rs 18.4 Crore.
 
-**Unit Economics for Pro Shield at Rs 59 per week per worker**
-
-| Item | Amount |
-|---|---|
-| Weekly premium collected | Rs 59.00 |
-| Expected claim payout | -Rs 28.13 |
-| Fraud loss provision at 3% budget | -Rs 1.77 |
-| Operational cost covering tech and support | -Rs 8.00 |
-| Net margin per worker per week | Rs 21.10, which is 35.8% |
-
-**Catastrophe Risk Management**
-
-A catastrophe reserve is built by saving 40 percent of weekly profit, reaching approximately Rs 3.7 lakh after 6 months. Workers are spread across 5 cities, so a city-level flood affects only 20 percent of the portfolio rather than the full book. A partner reinsurer covers claims exceeding a defined threshold, which is standard practice across the insurance industry. Monsoon surge pricing of plus 15 percent from June through September builds extra reserve precisely before the high-risk season.
-
 ---
 
 
@@ -343,5 +303,10 @@ A catastrophe reserve is built by saving 40 percent of weekly profit, reaching a
 | Trigger type | External environmental and social disruptions only. Personal choice not to work is excluded. |
 
 ---
+
+## Conclusion
+
+Gig workers don’t need charity. They need predictable income protection.  
+GigShield delivers that  automatically, instantly, and fairly.
 
 
