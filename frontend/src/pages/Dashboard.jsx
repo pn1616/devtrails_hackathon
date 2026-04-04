@@ -19,7 +19,6 @@ export default function Dashboard({ navigate, worker, policy }) {
         <span className="badge badge-green">● Active</span>
       </div>
 
-      {/* Coverage Status */}
       <div className="card-teal" style={{ marginBottom: 16 }}>
         <div className="profile-row">
           <div className="avatar">{worker?.name?.[0] || 'R'}</div>
@@ -45,7 +44,6 @@ export default function Dashboard({ navigate, worker, policy }) {
         </div>
       </div>
 
-      {/* Stats */}
       <div className="stats-grid">
         <div className="stat-card">
           <div className="stat-value">₹{earnings.toLocaleString()}</div>
@@ -65,7 +63,6 @@ export default function Dashboard({ navigate, worker, policy }) {
         </div>
       </div>
 
-      {/* Disruption Alerts */}
       <div className="card" style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
           <div style={{ fontSize: 13, fontWeight: 600 }}>⚠️ Disruption Alerts</div>
@@ -78,7 +75,6 @@ export default function Dashboard({ navigate, worker, policy }) {
         </div>
       </div>
 
-      {/* Loyalty Milestone */}
       <div className="card" style={{ marginBottom: 16 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
           <div style={{ fontSize: 13, fontWeight: 600 }}>🏆 Loyalty Milestone</div>
@@ -90,7 +86,6 @@ export default function Dashboard({ navigate, worker, policy }) {
         </div>
       </div>
 
-      {/* Payout History */}
       <div className="card" style={{ marginBottom: 16 }}>
         <div style={{ fontSize: 13, fontWeight: 600, marginBottom: 12 }}>📋 Payout History</div>
         {payoutHistory.map((p, i) => (
@@ -107,7 +102,6 @@ export default function Dashboard({ navigate, worker, policy }) {
         ))}
       </div>
 
-      {/* Action Buttons */}
       <div className="bottom-nav">
         <button className="nav-btn active" onClick={() => navigate('claims')}>⚡ Simulate Claim</button>
         <button className="nav-btn" onClick={() => navigate('autopay')}>🔄 Autopay Loop</button>

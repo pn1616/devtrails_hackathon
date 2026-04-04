@@ -5,11 +5,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ─── IN-MEMORY STORAGE (no database needed for demo) ───────────────────────
 let policies = {};
 let claims = [];
 
-// ─── MOCK ZEPTO WORKER DATABASE ─────────────────────────────────────────────
 const workers = {
   "ZPT001": {
     workerId: "ZPT001",
@@ -55,14 +53,12 @@ const workers = {
   }
 };
 
-// ─── ROUTE 1: MOCK ZEPTO OAUTH ───────────────────────────────────────────────
 app.get('/api/zepto/worker/:id', (req, res) => {
   const worker = workers[req.params.id];
   if (!worker) return res.status(404).json({ error: 'Worker not found' });
   setTimeout(() => res.json({ success: true, worker }), 1500); // simulate OAuth delay
 });
 
-// ─── ROUTE 2: POLICY CREATION ────────────────────────────────────────────────
 app.post('/api/policy/create', (req, res) => {
   const { workerId, planType, weeklyPremium, coverage } = req.body;
   const policy = {
@@ -81,14 +77,12 @@ app.post('/api/policy/create', (req, res) => {
   res.json({ success: true, policy });
 });
 
-// ─── ROUTE 3: GET POLICY ─────────────────────────────────────────────────────
 app.get('/api/policy/:workerId', (req, res) => {
   const policy = policies[req.params.workerId];
   if (!policy) return res.status(404).json({ error: 'No active policy' });
   res.json({ success: true, policy });
 });
 
-// ─── ROUTE 4: CANCEL POLICY ──────────────────────────────────────────────────
 app.put('/api/policy/cancel', (req, res) => {
   const { workerId } = req.body;
   if (policies[workerId]) {
@@ -99,7 +93,6 @@ app.put('/api/policy/cancel', (req, res) => {
   }
 });
 
-// ─── ROUTE 5: SIMULATE TRIGGER ───────────────────────────────────────────────
 app.post('/api/trigger/simulate', (req, res) => {
   const { type, workerId } = req.body;
 
@@ -145,13 +138,11 @@ app.post('/api/trigger/simulate', (req, res) => {
   res.json({ success: true, claim });
 });
 
-// ─── ROUTE 6: GET CLAIMS ─────────────────────────────────────────────────────
 app.get('/api/claims/:workerId', (req, res) => {
   const workerClaims = claims.filter(c => c.workerId === req.params.workerId);
   res.json({ success: true, claims: workerClaims });
 });
 
-// ─── ROUTE 7: UPDATE CLAIM STATUS ────────────────────────────────────────────
 app.put('/api/claim/approve', (req, res) => {
   const { claimId, fraudScore, fraudTier } = req.body;
   const claim = claims.find(c => c.claimId === claimId);
@@ -166,7 +157,6 @@ app.put('/api/claim/approve', (req, res) => {
   res.json({ success: true, claim });
 });
 
-// ─── ROUTE 8: SUNDAY AUTOPAY SIMULATOR ───────────────────────────────────────
 app.post('/api/autopay/simulate', (req, res) => {
   const { workerId } = req.body;
   const worker = workers[workerId];
@@ -194,5 +184,4 @@ app.post('/api/autopay/simulate', (req, res) => {
   res.json({ success: true, message: 'Autopay loop completed', steps, newCoverage: dynamicCoverage, newPremium: adjustedPremium });
 });
 
-// ─── START SERVER ─────────────────────────────────────────────────────────────
 app.listen(5000, () => console.log('GigShield backend running on http://localhost:5000'));

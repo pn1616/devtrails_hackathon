@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const BACKEND = 'http://localhost:5000';
 
 export default function OAuthFlow({ navigate, setWorker }) {
-  const [step, setStep] = useState('select'); // select | loading | profile
+  const [step, setStep] = useState('select'); 
   const [workerId, setWorkerId] = useState('ZPT001');
   const [worker, setLocalWorker] = useState(null);
   const [riskScore, setRiskScore] = useState(null);
@@ -11,11 +11,9 @@ export default function OAuthFlow({ navigate, setWorker }) {
   const handleConnect = async () => {
     setStep('loading');
     try {
-      // Step 1: Mock OAuth — call backend which returns Zepto worker data
       const res = await fetch(`${BACKEND}/api/zepto/worker/${workerId}`);
       const data = await res.json();
 
-      // Step 2: Get ML risk score
       const mlRes = await fetch('http://localhost:8000/ml/risk-score', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -33,7 +31,6 @@ export default function OAuthFlow({ navigate, setWorker }) {
       setRiskScore(mlData);
       setStep('profile');
     } catch (e) {
-      // Fallback mock data if servers not running
       const mockWorker = {
         workerId: 'ZPT001', name: 'Raju Kumar', platform: 'Zepto',
         zone: 'Kothrud, Pune', pinCode: '411038', lastWeekEarnings: 6500,

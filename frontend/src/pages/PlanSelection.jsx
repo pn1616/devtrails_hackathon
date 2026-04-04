@@ -34,7 +34,6 @@ export default function PlanSelection({ navigate, worker, setPolicy }) {
       const data = await res.json();
       setPremium(data);
     } catch {
-      // Fallback calculation
       const bases = { Basic: 29, Pro: 59, Elite: 99 };
       const base = bases[planType];
       const adj = Math.round(base * 1.2 * 0.9 * 0.92 * 1.15);
