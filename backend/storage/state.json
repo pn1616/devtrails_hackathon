@@ -1,0 +1,1647 @@
+{
+  "policies": {
+    "ZPT002": {
+      "policyId": "GS-1776445083033",
+      "workerId": "ZPT002",
+      "planType": "Elite",
+      "weeklyPremium": 63,
+      "coverage": 750,
+      "status": "active",
+      "startDate": "2026-04-17T16:58:03.033Z",
+      "renewalDate": "2026-04-24T16:58:03.033Z",
+      "payoutsThisMonth": 0,
+      "totalProtected": 3000
+    },
+    "ZPT001": {
+      "policyId": "GS-1776444874265",
+      "workerId": "ZPT001",
+      "planType": "Pro",
+      "weeklyPremium": 54,
+      "coverage": 450,
+      "status": "active",
+      "startDate": "2026-04-17T16:54:34.265Z",
+      "renewalDate": "2026-04-24T16:54:34.265Z",
+      "payoutsThisMonth": 0,
+      "totalProtected": 1800
+    },
+    "ZPT003": {
+      "policyId": "GS-1776436211074",
+      "workerId": "ZPT003",
+      "planType": "Elite",
+      "weeklyPremium": 99,
+      "coverage": 331,
+      "status": "active",
+      "startDate": "2026-04-17T14:30:11.074Z",
+      "renewalDate": "2026-04-24T14:30:45.615Z",
+      "payoutsThisMonth": 0,
+      "totalProtected": 3000
+    }
+  },
+  "claims": [
+    {
+      "claimId": "CLM-1776433059050-381",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "held",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T13:37:39.050Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": null,
+        "amount": 450,
+        "status": "failed",
+        "timestamp": "2026-04-17T13:37:39.171Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776433090964-6579",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "held",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T13:38:10.964Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_SeZxzWlDN42E0A",
+        "amount": 450,
+        "status": "created",
+        "timestamp": "2026-04-17T13:38:11.315Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776433452589-2347",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "held",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T13:44:12.589Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_Sea4MAyrJ5CHXk",
+        "amount": 450,
+        "status": "created",
+        "timestamp": "2026-04-17T13:44:12.860Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776433567219-9692",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T13:46:07.219Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_Sea6NGoQX3eXEd",
+        "amount": 450,
+        "status": "success",
+        "timestamp": "2026-04-17T13:46:07.450Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776433839187-5882",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T13:50:39.187Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_SeaBA9izESvwfR",
+        "amount": 450,
+        "status": "success",
+        "timestamp": "2026-04-17T13:50:39.443Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776435691543-2672",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T14:21:31.543Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_SeahmLQWjnUN8H",
+        "amount": 450,
+        "status": "success",
+        "timestamp": "2026-04-17T14:21:32.049Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776435699361-9913",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T14:21:39.361Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_SeahueDIxOA5E9",
+        "amount": 450,
+        "status": "success",
+        "timestamp": "2026-04-17T14:21:39.605Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776436052957-6855",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T14:27:32.957Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_Seao8d4vMbUjzh",
+        "amount": 450,
+        "status": "success",
+        "timestamp": "2026-04-17T14:27:33.206Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776436155798",
+      "workerId": "ZPT003",
+      "triggerType": "aqi",
+      "triggerName": "Severe AQI",
+      "threshold": ">300 AQI",
+      "payoutPct": 60,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T14:29:15.798Z",
+      "transaction": {
+        "transaction_id": "order_SeapwcSDghxtZb",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "amit.verma@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T14:29:15.797Z"
+      },
+      "createdAt": "2026-04-17T14:29:15.798Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776436175968",
+      "workerId": "ZPT003",
+      "triggerType": "curfew",
+      "triggerName": "Civil Disruption",
+      "threshold": "Zone alert",
+      "payoutPct": 100,
+      "payoutAmount": 750,
+      "status": "approved",
+      "approvedAt": "2026-04-17T14:29:35.968Z",
+      "transaction": {
+        "transaction_id": "order_SeaqIcffJ78qVx",
+        "amount": 750,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "amit.verma@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T14:29:35.967Z"
+      },
+      "createdAt": "2026-04-17T14:29:35.968Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776436228228-4937",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T14:30:28.228Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_SearDzCGkrLit7",
+        "amount": 450,
+        "status": "success",
+        "timestamp": "2026-04-17T14:30:28.507Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776436266626-7867",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T14:31:06.626Z",
+      "timeline": [],
+      "fraudScore": 0,
+      "isFraud": false,
+      "transaction": {
+        "transaction_id": "order_Seartpzvhrm7Ma",
+        "amount": 450,
+        "status": "success",
+        "timestamp": "2026-04-17T14:31:06.857Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776442478904",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 750,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:14:38.904Z",
+      "transaction": {
+        "transaction_id": "order_SecdG8ZjJsqDML",
+        "amount": 750,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:14:38.904Z"
+      },
+      "createdAt": "2026-04-17T16:14:38.904Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776442485022",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 750,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:14:45.022Z",
+      "transaction": {
+        "transaction_id": "order_SecdModo1ysO4c",
+        "amount": 750,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:14:45.020Z"
+      },
+      "createdAt": "2026-04-17T16:14:45.022Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776442515537-7220",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "held",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T16:15:15.537Z",
+      "timeline": [],
+      "fraudScore": 0.5,
+      "isFraud": true,
+      "transaction": {
+        "transaction_id": null,
+        "amount": 450,
+        "status": "skipped",
+        "timestamp": "2026-04-17T16:15:15.545Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776442538643",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 750,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:15:38.643Z",
+      "transaction": {
+        "transaction_id": "order_SeceJLyimViO5o",
+        "amount": 750,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:15:38.642Z"
+      },
+      "createdAt": "2026-04-17T16:15:38.643Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776443739809",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:35:39.809Z",
+      "transaction": {
+        "transaction_id": "order_SeczSSUVqmx2AZ",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:35:39.808Z"
+      },
+      "createdAt": "2026-04-17T16:35:39.809Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776443748595",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:35:48.595Z",
+      "transaction": {
+        "transaction_id": "order_Seczc3jui9uUkk",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:35:48.595Z"
+      },
+      "createdAt": "2026-04-17T16:35:48.595Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776443754005",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:35:54.005Z",
+      "transaction": {
+        "transaction_id": "order_SeczhyIvvlwa9c",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:35:54.005Z"
+      },
+      "createdAt": "2026-04-17T16:35:54.005Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776443946793",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:39:06.793Z",
+      "transaction": {
+        "transaction_id": "order_Sed36NaEukG7pm",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:39:06.792Z"
+      },
+      "createdAt": "2026-04-17T16:39:06.793Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776444206748",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:43:26.748Z",
+      "transaction": {
+        "transaction_id": "order_Sed7g6womIRaID",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:43:26.747Z"
+      },
+      "createdAt": "2026-04-17T16:43:26.748Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776444227943",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:43:47.943Z",
+      "transaction": {
+        "transaction_id": "order_Sed83HnVXfHXn9",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:43:47.942Z"
+      },
+      "createdAt": "2026-04-17T16:43:47.943Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776444233644",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:43:53.644Z",
+      "transaction": {
+        "transaction_id": "order_Sed89VlCLFcDCW",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:43:53.642Z"
+      },
+      "createdAt": "2026-04-17T16:43:53.644Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776444908671-6211",
+      "workerId": "ZPT002",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "held",
+      "flags": {
+        "weather_mismatch": false
+      },
+      "createdAt": "2026-04-17T16:55:08.671Z",
+      "timeline": [],
+      "fraudScore": 0.5,
+      "isFraud": true,
+      "transaction": {
+        "transaction_id": null,
+        "amount": 450,
+        "status": "skipped",
+        "timestamp": "2026-04-17T16:55:08.681Z"
+      }
+    },
+    {
+      "claimId": "CLM-1776444915660",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:55:15.660Z",
+      "transaction": {
+        "transaction_id": "order_SedK9vmCpL1iC5",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:55:15.658Z"
+      },
+      "createdAt": "2026-04-17T16:55:15.660Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776444941866",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:55:41.866Z",
+      "transaction": {
+        "transaction_id": "order_SedKcXy3NBHshL",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:55:41.865Z"
+      },
+      "createdAt": "2026-04-17T16:55:41.866Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776444957669",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:55:57.669Z",
+      "transaction": {
+        "transaction_id": "order_SedKtoMWJ73YD6",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:55:57.668Z"
+      },
+      "createdAt": "2026-04-17T16:55:57.669Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    },
+    {
+      "claimId": "CLM-1776444967469",
+      "workerId": "ZPT001",
+      "triggerType": "rainfall",
+      "triggerName": "Extreme Rainfall",
+      "threshold": ">50mm/hr",
+      "payoutPct": 100,
+      "payoutAmount": 450,
+      "status": "approved",
+      "approvedAt": "2026-04-17T16:56:07.469Z",
+      "transaction": {
+        "transaction_id": "order_SedL4W7HgrtjI4",
+        "amount": 450,
+        "currency": "INR",
+        "method": "RAZORPAY_ORDER",
+        "upi_id": "raju.kumar@upi",
+        "status": "success",
+        "timestamp": "2026-04-17T16:56:07.467Z"
+      },
+      "createdAt": "2026-04-17T16:56:07.469Z",
+      "timeline": [
+        {
+          "stage": "Trigger Detection",
+          "time": "T + 0 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Cross Verification",
+          "time": "T + 30 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Policy Check",
+          "time": "T + 45 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Fraud Check",
+          "time": "T + 60 sec",
+          "status": "done"
+        },
+        {
+          "stage": "Auto Approve",
+          "time": "T + 90 sec",
+          "status": "done"
+        },
+        {
+          "stage": "UPI Payout Sent",
+          "time": "T + 2 min",
+          "status": "done"
+        }
+      ]
+    }
+  ],
+  "weatherEvents": [
+    {
+      "event_id": "EVT-1776433059042",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T13:37:39.042Z"
+    },
+    {
+      "event_id": "EVT-1776433090963",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T13:38:10.963Z"
+    },
+    {
+      "event_id": "EVT-1776433452588",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T13:44:12.588Z"
+    },
+    {
+      "event_id": "EVT-1776433567218",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T13:46:07.218Z"
+    },
+    {
+      "event_id": "EVT-1776433839186",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T13:50:39.186Z"
+    },
+    {
+      "event_id": "EVT-1776435691542",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T14:21:31.542Z"
+    },
+    {
+      "event_id": "EVT-1776435699360",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T14:21:39.360Z"
+    },
+    {
+      "event_id": "EVT-1776436052956",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T14:27:32.956Z"
+    },
+    {
+      "event_id": "EVT-1776436228226",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T14:30:28.226Z"
+    },
+    {
+      "event_id": "EVT-1776436266625",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T14:31:06.625Z"
+    },
+    {
+      "event_id": "EVT-1776442515535",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T16:15:15.535Z"
+    },
+    {
+      "event_id": "EVT-1776444908669",
+      "event": "rainstorm",
+      "zone": "Mumbai",
+      "rainfall_mm": 65,
+      "timestamp": "2026-04-17T16:55:08.669Z"
+    }
+  ],
+  "fraudPredictions": [
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T13:37:39.169Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T13:38:11.023Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T13:44:12.613Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T13:46:07.229Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T13:50:39.201Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T14:21:31.719Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T14:21:39.384Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T14:27:32.997Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T14:30:28.303Z"
+    },
+    {
+      "fraud_score": 0,
+      "is_fraud": false,
+      "source": "ml_api",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T14:31:06.640Z"
+    },
+    {
+      "fraud_score": 0.5,
+      "is_fraud": true,
+      "source": "fallback",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T16:15:15.544Z"
+    },
+    {
+      "fraud_score": 0.5,
+      "is_fraud": true,
+      "source": "fallback",
+      "claimInput": {
+        "claim_amount": 450,
+        "location_consistency": 0.85,
+        "weather_correlation": 0.92,
+        "claim_frequency": 0.9,
+        "time_anomalies": 0.12
+      },
+      "timestamp": "2026-04-17T16:55:08.680Z"
+    }
+  ],
+  "payouts": [
+    {
+      "status": "failed",
+      "transaction_id": null,
+      "amount": 450,
+      "currency": "INR",
+      "method": "UPI",
+      "upi_id": "priya.sharma@upi",
+      "timestamp": "2026-04-17T13:37:39.171Z",
+      "reason": "Cannot read properties of undefined (reading 'create')"
+    },
+    {
+      "transaction_id": "order_SeZxzWlDN42E0A",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "created",
+      "timestamp": "2026-04-17T13:38:11.315Z"
+    },
+    {
+      "transaction_id": "order_Sea4MAyrJ5CHXk",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "created",
+      "timestamp": "2026-04-17T13:44:12.860Z"
+    },
+    {
+      "transaction_id": "order_Sea6NGoQX3eXEd",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T13:46:07.450Z"
+    },
+    {
+      "transaction_id": "order_SeaBA9izESvwfR",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T13:50:39.443Z"
+    },
+    {
+      "transaction_id": "order_SeahmLQWjnUN8H",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T14:21:32.049Z"
+    },
+    {
+      "transaction_id": "order_SeahueDIxOA5E9",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T14:21:39.605Z"
+    },
+    {
+      "transaction_id": "order_Seao8d4vMbUjzh",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T14:27:33.206Z"
+    },
+    {
+      "transaction_id": "order_SeapwcSDghxtZb",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "amit.verma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T14:29:15.797Z"
+    },
+    {
+      "transaction_id": "order_SeaqIcffJ78qVx",
+      "amount": 750,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "amit.verma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T14:29:35.967Z"
+    },
+    {
+      "transaction_id": "order_SearDzCGkrLit7",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T14:30:28.507Z"
+    },
+    {
+      "transaction_id": "order_Seartpzvhrm7Ma",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "priya.sharma@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T14:31:06.857Z"
+    },
+    {
+      "transaction_id": "order_SecdG8ZjJsqDML",
+      "amount": 750,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:14:38.904Z"
+    },
+    {
+      "transaction_id": "order_SecdModo1ysO4c",
+      "amount": 750,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:14:45.020Z"
+    },
+    {
+      "transaction_id": "order_SeceJLyimViO5o",
+      "amount": 750,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:15:38.642Z"
+    },
+    {
+      "transaction_id": "order_SeczSSUVqmx2AZ",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:35:39.808Z"
+    },
+    {
+      "transaction_id": "order_Seczc3jui9uUkk",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:35:48.595Z"
+    },
+    {
+      "transaction_id": "order_SeczhyIvvlwa9c",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:35:54.005Z"
+    },
+    {
+      "transaction_id": "order_Sed36NaEukG7pm",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:39:06.792Z"
+    },
+    {
+      "transaction_id": "order_Sed7g6womIRaID",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:43:26.747Z"
+    },
+    {
+      "transaction_id": "order_Sed83HnVXfHXn9",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:43:47.942Z"
+    },
+    {
+      "transaction_id": "order_Sed89VlCLFcDCW",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:43:53.642Z"
+    },
+    {
+      "transaction_id": "order_SedK9vmCpL1iC5",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:55:15.658Z"
+    },
+    {
+      "transaction_id": "order_SedKcXy3NBHshL",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:55:41.865Z"
+    },
+    {
+      "transaction_id": "order_SedKtoMWJ73YD6",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:55:57.668Z"
+    },
+    {
+      "transaction_id": "order_SedL4W7HgrtjI4",
+      "amount": 450,
+      "currency": "INR",
+      "method": "RAZORPAY_ORDER",
+      "upi_id": "raju.kumar@upi",
+      "status": "success",
+      "timestamp": "2026-04-17T16:56:07.467Z"
+    }
+  ]
+}
