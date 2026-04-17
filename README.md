@@ -120,4 +120,22 @@ devtrails_hackathon/
 
 ---
 
+---
+
+## Pitch Deck
+
+View the full GigShield pitch deck (PDF):
+
+👉 [GigShield Pitch Deck](https://amritauniv-my.sharepoint.com/:b:/g/personal/am_sc_u4cse23039_am_students_amrita_edu/IQAFSzAnhQhTQJ3FRxElkl5NAXU0ETYGsxOl46RER8Rq7_8?e=PptwEd)
+
+This deck includes:
+- Problem & gig worker persona  
+- Solution & trigger-based model  
+- End-to-end flow  
+- AI fraud architecture  
+- Business model & pricing  
+- Impact and roadmap  
+
+---
+
 Built for DEVTrails 2026
