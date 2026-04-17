@@ -93,7 +93,8 @@ npm install && npm run dev
 | Frontend | http://localhost:5173      |
 | Backend  | http://localhost:5000      |
 | ML Docs  | http://localhost:8000/docs |
-
+  
+Check SETUP.md for more information
 ---
 
 ## Demo Workers

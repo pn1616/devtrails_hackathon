@@ -1,66 +1,111 @@
-# GigShield — Phase 2 Setup Guide
+# GigShield — Phase 3 Setup Guide
 
-## Quick Start (3 terminals)
+## Quick Start
 
-### Terminal 1 — Backend
-```bash
-cd backend
-npm install
-node server.js
-# Runs on http://localhost:5000
-```
+You need three terminals running simultaneously.
 
-### Terminal 2 — ML Service
+**Terminal 1 — ML Service**
+
 ```bash
 cd ml
 pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
-# Runs on http://localhost:8000
-# API docs: http://localhost:8000/docs
+python -m uvicorn main:app --reload --port 8000
 ```
 
-### Terminal 3 — Frontend
+Runs at http://localhost:8000 — API docs at http://localhost:8000/docs
+
+---
+
+**Terminal 2 — Backend**
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+Runs at http://localhost:5000
+
+---
+
+**Terminal 3 — Frontend**
+
 ```bash
 cd frontend
 npm install
-npm start
-# Runs on http://localhost:3000
+npm run dev
 ```
+
+Runs at http://localhost:5173
+
+---
+
+## Health Check
+
+Once all three are running, verify the ML service first:
+
+```
+http://localhost:8000/docs
+```
+
+Then confirm the backend is responding:
+
+```bash
+curl http://localhost:5000/api/dashboard/admin
+```
+
+If both return data, the system is ready.
+
+---
 
 ## What Each Part Does
 
-### Backend (Node.js - port 5000)
-- `GET /api/zepto/worker/:id` — Mock Zepto OAuth (returns worker profile)
-- `POST /api/policy/create` — Create insurance policy
-- `GET /api/policy/:workerId` — Get active policy
-- `POST /api/trigger/simulate` — Simulate a disruption trigger
-- `GET /api/claims/:workerId` — Get claim history
-- `POST /api/autopay/simulate` — Run Sunday autopay batch job
+**ML Service (FastAPI, port 8000)**
 
-### ML Service (Python FastAPI - port 8000)
-- `POST /ml/premium` — Calculate AI-personalized weekly premium
-- `POST /ml/fraud-score` — Score a claim (7 signals → 0.0-1.0)
-- `POST /ml/risk-score` — Worker risk score during onboarding
+| Endpoint           | Purpose                          |
+|--------------------|----------------------------------|
+| POST /ml/premium   | Dynamic premium calculation      |
+| POST /ml/fraud-score | Fraud classification (0-1 score) |
+| POST /ml/risk-score | Onboarding risk score           |
+| POST /detect/ring  | Fraud cluster detection          |
 
-### Frontend (React - port 3000)
-- Landing page — Raju's story + stats
-- OAuth Flow — "Connect with Zepto" mock authentication
-- Plan Selection — AI premium calculator + plan cards
-- Dashboard — Coverage status, earnings, alerts, payout history
-- Claims Simulator — 5 triggers + LIVE FRAUD SCORE VISUALIZER
-- Autopay Simulator — Sunday batch job animation
+**Backend (Node.js, port 5000)**
 
-## The Unique Feature — Fraud Score Visualizer
-When a claim is triggered, the app shows each of the 7 fraud signals
-lighting up one by one with animations, contributing to a growing score,
-then routing to Green/Amber/Red. This is built using algorithm
-visualization techniques combined with ML fraud detection.
+| Endpoint                      | Purpose                    |
+|-------------------------------|----------------------------|
+| POST /api/trigger/simulate    | Full pipeline entry point  |
+| GET /api/dashboard/worker/:id | Worker dashboard data      |
+| GET /api/dashboard/admin      | Admin metrics              |
+| GET /api/receipt/:claimId     | Receipt download           |
+| POST /api/autopay/simulate    | Payout simulation          |
 
-## Mock Workers Available
-- ZPT001: Raju Kumar (Zepto, Kothrud Pune, ₹6500/week, 4.6★)
-- ZPT002: Priya Sharma (Blinkit, Andheri Mumbai, ₹8200/week, 4.8★)
-- ZPT003: Amit Verma (Swiggy Instamart, Koramangala Bangalore, ₹5800/week, 3.8★)
+**Frontend (React + Vite, port 5173)**
 
-## Note on APIs
-The app works WITHOUT the backend/ML running — it falls back to
-mock data automatically. So you can demo the frontend alone if needed.
+Covers the full user journey: landing page, mock OAuth login, plan selection with AI pricing, worker dashboard with real-time alerts, the simulation pipeline, and the admin metrics panel.
+
+---
+
+
+## Troubleshooting
+
+**"Data unavailable" on the frontend**
+
+Restart the backend and hard-refresh the browser:
+
+```bash
+Ctrl + C
+cd backend
+npm start
+```
+
+Then `Ctrl + Shift + R` in the browser.
+
+**ML errors or missing scores**
+
+Check that http://localhost:8000/docs loads correctly. If not, re-run the ML service setup from Terminal 1.
+
+---
+
+## Note
+
+The backend and ML service must both be running for the full pipeline to work. The frontend alone will load but fraud scoring and payouts will not function without them.
